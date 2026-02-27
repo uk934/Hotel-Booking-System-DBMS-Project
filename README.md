@@ -1,111 +1,74 @@
 🏨 Hotel Booking System – DBMS Project
-📌 Project Overview
 
-This project demonstrates the design and implementation of a relational database for a Hotel Booking System. The system manages customer information, hotel details, room availability, bookings, and payment records using structured database concepts.
+📌 Project Overview
+The Hotel Booking System is a simple relational database project developed for the DBMS course.
+This system is designed to manage hotel reservations, customers, payments, and administration details efficiently.
+The database is implemented using MySQL / MariaDB and follows basic Entity-Relationship modeling concepts.
 
 🎯 Objectives
+- Store customer details
+- Manage hotel information
+- Record reservations
+- Track payments
+- Maintain relationships between entities
 
-Store customer details
-
-Maintain hotel and room information
-
-Record booking transactions
-
-Track payment details
-
-Establish relationships between entities
-
-🧩 Entities & Attributes
-Customer
-
-customer_id (PK)
-
+🗂️ Database Entities
+The project contains 5 main entities:
+1️⃣ Customer
+customer_id (Primary Key)
 name
-
 email
-
 phone
-
 address
-
-Hotel
-
-hotel_id (PK)
-
+2️⃣ Hotel
+hotel_id (Primary Key)
 hotel_name
-
 location
-
 rating
-
 contact_number
-
-Room
-
-room_id (PK)
-
+3️⃣ Reservation
+reservation_id (Primary Key)
 room_type
-
-price
-
-availability
-
-hotel_id (FK)
-
-Booking
-
-booking_id (PK)
-
 check_in
-
 check_out
-
-customer_id (FK)
-
-room_id (FK)
-
-Payment
-
-payment_id (PK)
-
+customer_id (Foreign Key)
+hotel_id (Foreign Key)
+4️⃣ Payment
+payment_id (Primary Key)
+reservation_id (Foreign Key)
 amount
-
 payment_method
-
 payment_date
-
-booking_id (FK)
+5️⃣ Admin
+admin_id (Primary Key)
+name
+email
+phone
+hotel_id (Foreign Key)
 
 🔗 Relationships
+- One Customer can make multiple Reservations.
+- One Hotel can have multiple Reservations.
+- One Reservation can have multiple Payments.
+- One Hotel can have multiple Admins.
 
-Customer → Booking (One-to-Many)
+🛠️ Technologies Used
+- MySQL / MariaDB
+- SQL (DDL commands)
+- ER Modeling Concepts
 
-Hotel → Room (One-to-Many)
+📊 Features
+✔ Simple and clean database structure
+✔ Primary and Foreign key relationships
+✔ Minimal entity complexity
+✔ Easy to understand and implement
 
-Room → Booking (One-to-Many)
-
-Booking → Payment (One-to-One)
-
-🔑 Keys Used
-
-Primary Keys:
-customer_id, hotel_id, room_id, booking_id, payment_id
-
-Foreign Keys:
-hotel_id (Room), customer_id (Booking), room_id (Booking), booking_id (Payment)
-
-✅ Features / Advantages
-
-✔ Structured data storage
-✔ Data integrity & consistency
-✔ Reduced redundancy
-✔ Efficient querying
-✔ Scalable design
-
-🛠 Technologies Used
-
-MariaDB / MySQL
-
-SQL
-
-ER Modeling (Draw.io)
+📚 Academic Information
+Course: Database Management System (UCS4001)
+University: IILM University
+Semester: 4th Semester (2026)
+🚀 Future Enhancements
+Online payment gateway integration
+Room availability tracking
+Staff management module
+User login authentication system
